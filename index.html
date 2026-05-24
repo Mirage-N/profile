@@ -1,0 +1,1027 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+<title>Sergey Miryagin — Senior Product Manager</title>
+<meta name="description" content="Sergey Miryagin — Senior Product Manager. 10+ years building internal products in fintech, e-commerce, HRTech.">
+<meta property="og:title" content="Sergey Miryagin — Senior Product Manager">
+<meta property="og:description" content="10+ years building internal products at Alfa-Bank, Yandex, Leroy Merlin.">
+<meta property="og:type" content="profile">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2212%22 fill=%22%23f5a623%22/><text x=%2232%22 y=%2243%22 font-family=%22Inter,system-ui,sans-serif%22 font-size=%2232%22 font-weight=%22700%22 text-anchor=%22middle%22 fill=%22%23111%22>SM</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#1f1f1f;
+    --panel:#2a2a2a;
+    --panel-2:#323232;
+    --border:#3a3a3a;
+    --text:#e8e8e8;
+    --muted:#9a9a9a;
+    --muted-2:#bdbdbd;
+    --accent:#f5a623;       /* yellow-orange used in headings */
+    --link:#f5a623;
+    --green:#5cb85c;
+    --blue:#4ea1ff;
+    --purple:#b070ff;
+    --red:#ef5b4b;
+    --teal:#4dd0c4;
+    --shadow: 0 6px 20px rgba(0,0,0,.35);
+    --radius:14px;
+    --radius-sm:8px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    font-size:14px;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  a{color:var(--link);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  .wrap{max-width:1180px;margin:0 auto;padding:24px 20px 80px}
+
+  /* ===== Top bar with lang switch ===== */
+  .topbar{
+    display:flex;justify-content:flex-end;align-items:center;gap:8px;
+    margin-bottom:14px;
+  }
+  .lang{
+    display:inline-flex;background:var(--panel);border:1px solid var(--border);border-radius:999px;padding:4px;gap:2px;
+  }
+  .lang button{
+    background:transparent;border:0;color:var(--muted-2);
+    font:600 12px/1 'Inter',sans-serif; letter-spacing:.04em;
+    padding:6px 12px;border-radius:999px;cursor:pointer;text-transform:uppercase;
+  }
+  .lang button.active{background:var(--accent);color:#1a1a1a}
+  .download{
+    display:inline-flex;align-items:center;gap:6px;
+    background:var(--panel);border:1px solid var(--border);border-radius:999px;
+    color:var(--text);font:600 12px/1 'Inter',sans-serif;letter-spacing:.04em;
+    padding:8px 14px;text-transform:uppercase;cursor:pointer;
+  }
+  .download:hover{background:var(--panel-2);text-decoration:none}
+  .download svg{width:14px;height:14px}
+
+  /* ===== Hero card ===== */
+  .hero{
+    background:var(--panel);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:28px 32px;
+    display:grid;grid-template-columns:140px 1fr;gap:24px;
+    box-shadow:var(--shadow);
+  }
+  .avatar{
+    width:140px;height:140px;border-radius:50%;
+    background:#3a3a3a center/cover no-repeat;
+    border:3px solid #444;
+    overflow:hidden;
+  }
+  .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+  .hero h1{
+    font:800 38px/1.1 'Inter',sans-serif;
+    margin:0 0 6px;letter-spacing:-.01em;
+  }
+  .hero .subtitle{
+    color:var(--muted-2);font-size:14.5px;margin-bottom:12px;
+  }
+  .hero .summary{
+    color:#cfcfcf;font-size:13.5px;line-height:1.6;max-width:760px;
+  }
+
+  /* ===== Timeline ===== */
+  .timeline{
+    margin-top:22px;position:relative;padding:0 6px;
+  }
+  .timeline-line{
+    position:absolute;left:6px;right:6px;top:22px;height:2px;background:#3f3f3f;border-radius:2px;
+  }
+  .timeline-row{
+    display:grid;grid-template-columns:repeat(7,1fr);gap:8px;position:relative;
+  }
+  .tl-step{text-align:center;position:relative;padding-top:0}
+  .tl-step .label{
+    font-size:11px;color:var(--muted-2);font-weight:600;
+    line-height:1.25;margin-bottom:6px;min-height:28px;display:flex;flex-direction:column;justify-content:flex-end;
+  }
+  .tl-step .dot{
+    width:14px;height:14px;border-radius:50%;margin:0 auto;
+    border:3px solid var(--bg);position:relative;z-index:1;
+  }
+  .tl-step .year{
+    font-size:11px;color:var(--muted);margin-top:6px;font-weight:600;
+  }
+
+  /* ===== KPI ===== */
+  .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
+  .kpi{
+    background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);
+    padding:24px 22px 22px;position:relative;overflow:hidden;text-align:center;
+  }
+  .kpi::before{
+    content:"";position:absolute;left:14px;right:14px;top:0;height:3px;border-radius:0 0 3px 3px;
+  }
+  .kpi.red::before{background:var(--red)}
+  .kpi.green::before{background:var(--green)}
+  .kpi.blue::before{background:var(--blue)}
+  .kpi .num{font:800 36px/1 'Inter',sans-serif;letter-spacing:-.02em}
+  .kpi.red .num{color:var(--red)}
+  .kpi.green .num{color:var(--green)}
+  .kpi.blue .num{color:var(--blue)}
+  .kpi .lbl{color:var(--muted-2);margin-top:6px;font-size:13px;font-weight:600}
+  .kpi .sub{color:var(--muted);font-size:12px;margin-top:8px}
+
+  /* ===== Main grid ===== */
+  .grid{display:grid;grid-template-columns:280px 1fr;gap:18px;margin-top:18px}
+  .card{
+    background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);
+    padding:20px 22px;
+  }
+  .card + .card{margin-top:16px}
+
+  .h{
+    font:700 14px/1 'Inter',sans-serif;
+    color:var(--accent);
+    text-transform:none;letter-spacing:.01em;
+    border-bottom:1px solid var(--accent);
+    padding-bottom:6px;display:inline-block;margin:0 0 14px;
+  }
+
+  /* ===== Sidebar bits ===== */
+  .contact-list{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+  .contact-list li{display:flex;align-items:center;gap:10px;color:#dcdcdc;font-size:13.5px}
+  .contact-list .icn{width:18px;display:inline-flex;justify-content:center;color:var(--accent);font-weight:700}
+  .contact-list a{color:#dcdcdc}
+  .contact-list a:hover{color:var(--accent)}
+
+  .focus-list{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+  .focus-list li{display:grid;grid-template-columns:14px 1fr;gap:10px;align-items:start}
+  .focus-list .bullet{width:10px;height:10px;border-radius:50%;margin-top:5px}
+  .focus-list .title{font-weight:700;color:#eaeaea;font-size:13.5px}
+  .focus-list .desc{color:var(--muted);font-size:12px;margin-top:2px}
+
+  .skill{margin-bottom:10px}
+  .skill-row{display:flex;justify-content:space-between;font-size:12.5px;color:#dcdcdc;margin-bottom:4px}
+  .skill-row .pct{color:var(--muted-2);font-weight:600}
+  .bar{height:6px;background:#3a3a3a;border-radius:999px;overflow:hidden}
+  .bar > i{display:block;height:100%;border-radius:999px}
+
+  .tools{display:flex;flex-wrap:wrap;gap:6px}
+  .tag{
+    border:1px solid var(--border);background:#2f2f2f;border-radius:6px;
+    padding:5px 9px;font-size:12px;color:#dcdcdc;font-weight:500;
+  }
+  .tag.t-data{color:#7bd0c4;border-color:#2e4d4a;background:#22302e}
+  .tag.t-ai{color:#bba2ff;border-color:#3d375a;background:#2c2640}
+
+  .lang-block{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .lang-block .name{font-weight:700;color:#eaeaea;font-size:13px}
+  .lang-block .lvl{color:var(--muted-2);font-size:12px;margin:2px 0 6px}
+
+  /* ===== Experience ===== */
+  .legend{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:14px}
+  .legend span{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted-2)}
+  .legend i{width:9px;height:9px;border-radius:50%;display:inline-block}
+
+  .job{padding:14px 0;border-top:1px dashed #3a3a3a}
+  .job:first-of-type{border-top:0;padding-top:0}
+  .job-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .company{font-weight:700;color:#eaeaea;font-size:15px}
+  .loc{color:var(--muted);font-size:12px}
+  .role-line{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:6px;flex-wrap:wrap}
+  .role{display:flex;align-items:center;gap:8px;color:var(--accent);font-weight:700;font-size:14px}
+  .role .cat-dot{width:9px;height:9px;border-radius:50%}
+  .dates{color:var(--muted-2);font-size:12.5px}
+  .pill{
+    display:inline-block;background:#3b2a1e;color:#f5a266;border:1px solid #533a26;
+    padding:3px 9px;border-radius:6px;font-size:11.5px;margin-top:6px;font-weight:500;
+  }
+  .pill.purple{background:#2e1f3d;color:#c6a8ff;border-color:#48356a}
+  .pill.green{background:#1f3526;color:#8ddca0;border-color:#36563f}
+  .pill.blue{background:#1c2c44;color:#9ec5ff;border-color:#2e4a73}
+  .pill.red{background:#3d2222;color:#ff9d8f;border-color:#5a3636}
+  .pill.teal{background:#1d3a37;color:#7be0d2;border-color:#305b56}
+
+  .desc{color:#cfcfcf;font-size:13px;margin:8px 0 6px;line-height:1.55}
+  .bullets{margin:0;padding-left:18px;color:#d0d0d0;font-size:13px;line-height:1.55}
+  .bullets li{margin-bottom:3px}
+
+  .subjob{padding-left:14px;border-left:2px solid #3a3a3a;margin-top:10px}
+  .subjob .role .cat-dot{margin-right:0}
+
+  /* ===== Education + Achievements ===== */
+  .edu-item{margin-bottom:12px}
+  .edu-item:last-child{margin-bottom:0}
+  .edu-line{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+  .edu-title{font-weight:700;color:#eaeaea;font-size:13.5px}
+  .edu-year{color:var(--accent);font-size:12.5px;font-weight:600;white-space:nowrap}
+  .edu-desc{color:var(--muted);font-size:12.5px;margin-top:2px}
+
+  .ach{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;font-size:13px}
+  .ach .v{color:var(--accent);font-weight:800;min-width:64px;display:inline-block}
+  .ach.green .v{color:var(--green)}
+  .ach.blue .v{color:var(--blue)}
+  .ach.red .v{color:var(--red)}
+  .ach .t{color:#d8d8d8}
+
+  /* ===== Contact form ===== */
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .form-row.single{grid-template-columns:1fr}
+  .field{display:flex;flex-direction:column;margin-bottom:12px}
+  .field label{font-size:12px;color:var(--muted-2);font-weight:600;margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em}
+  .field input, .field textarea{
+    background:#252525;border:1px solid var(--border);border-radius:8px;
+    padding:11px 12px;color:var(--text);font:14px 'Inter',sans-serif;
+    transition:border-color .15s ease;
+  }
+  .field input:focus, .field textarea:focus{outline:none;border-color:var(--accent)}
+  .field textarea{resize:vertical;min-height:110px}
+  .btn{
+    background:var(--accent);color:#1a1a1a;border:0;border-radius:8px;
+    padding:11px 22px;font:700 13px/1 'Inter',sans-serif;cursor:pointer;text-transform:uppercase;letter-spacing:.04em;
+  }
+  .btn:hover{filter:brightness(1.05)}
+  .form-note{color:var(--muted);font-size:12px;margin-top:8px}
+  .form-msg{margin-top:10px;font-size:13px;color:var(--green);display:none}
+  .form-msg.err{color:var(--red)}
+
+  /* ===== Footer ===== */
+  footer{text-align:center;color:var(--muted);font-size:12px;margin-top:32px}
+  footer a{color:var(--muted-2)}
+
+  /* ===== Print ===== */
+  @media print{
+    body{background:#fff;color:#000}
+    .topbar,.btn,.download,#contact{display:none!important}
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 900px){
+    .grid{grid-template-columns:1fr}
+    .kpis{grid-template-columns:1fr}
+    .hero{grid-template-columns:1fr;text-align:center}
+    .avatar{margin:0 auto}
+    .timeline-row{grid-template-columns:repeat(7,1fr);gap:4px}
+    .tl-step .label{font-size:10px}
+    .hero h1{font-size:28px}
+  }
+  @media (max-width: 600px){
+    .form-row{grid-template-columns:1fr}
+    .wrap{padding:14px 12px 60px}
+    .hero{padding:20px}
+    .card{padding:18px}
+    .timeline{display:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ===== Top bar ===== -->
+  <div class="topbar">
+    <a class="download" id="download-btn" href="cv_ru.pdf" download>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+      <span data-i18n="download_pdf">Скачать PDF</span>
+    </a>
+    <div class="lang" role="tablist" aria-label="Language">
+      <button type="button" data-lang="ru" class="active">RU</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+  </div>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="avatar"><img src="avatar.png" alt="Sergey Miryagin"></div>
+    <div>
+      <h1 data-i18n="name">Сергей Мирягин</h1>
+      <div class="subtitle" data-i18n="subtitle">Старший продакт-менеджер · Финтех · E-commerce · HRTech · Внутренние платформы</div>
+      <div class="summary" data-i18n="summary">10+ лет создания внутренних продуктов в крупных компаниях — Альфа-Банк, Яндекс, Leroy Merlin. Эксперт в end-to-end discovery, ETL/NRT пайплайнах, системах мотивации и вознаграждений, автоматизации процессов (−30–50% затрат) и управлении кросс-функциональными командами.</div>
+
+      <div class="timeline" aria-hidden="true">
+        <div class="timeline-line"></div>
+        <div class="timeline-row">
+          <div class="tl-step"><div class="label" data-i18n="tl_1">Саппорт</div><div class="dot" style="background:var(--green)"></div><div class="year">2015</div></div>
+          <div class="tl-step"><div class="label" data-i18n="tl_2">Мен. подд.</div><div class="dot" style="background:var(--green)"></div><div class="year">2016</div></div>
+          <div class="tl-step"><div class="label" data-i18n="tl_3">ITSM лид</div><div class="dot" style="background:var(--green)"></div><div class="year">2018</div></div>
+          <div class="tl-step"><div class="label" data-i18n="tl_4">PM HR</div><div class="dot" style="background:var(--purple)"></div><div class="year">2021</div></div>
+          <div class="tl-step"><div class="label" data-i18n="tl_5">Ст.PM Закупки</div><div class="dot" style="background:var(--blue)"></div><div class="year">2023</div></div>
+          <div class="tl-step"><div class="label" data-i18n="tl_6">Ст.PM B2B</div><div class="dot" style="background:#ffd166"></div><div class="year">2024</div></div>
+          <div class="tl-step"><div class="label" data-i18n="tl_7">Ст.PO Альфа</div><div class="dot" style="background:var(--red)"></div><div class="year">2025</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== KPIs ===== -->
+  <section class="kpis">
+    <div class="kpi red">
+      <div class="num">33 700</div>
+      <div class="lbl">MAU</div>
+      <div class="sub" data-i18n="kpi_1">Платформа партнёров Альфа-Банк</div>
+    </div>
+    <div class="kpi green">
+      <div class="num">2.3×</div>
+      <div class="lbl" data-i18n="kpi_2_lbl">рост выручки</div>
+      <div class="sub" data-i18n="kpi_2">Высокий сезон, Яндекс</div>
+    </div>
+    <div class="kpi blue">
+      <div class="num">50%</div>
+      <div class="lbl" data-i18n="kpi_3_lbl">снижение затрат</div>
+      <div class="sub" data-i18n="kpi_3">Автоматизация процессов</div>
+    </div>
+  </section>
+
+  <!-- ===== Main grid ===== -->
+  <div class="grid">
+
+    <!-- ===== Sidebar ===== -->
+    <aside>
+      <section class="card">
+        <h2 class="h" data-i18n="contacts">Контакты</h2>
+        <ul class="contact-list">
+          <li><span class="icn">◉</span><span data-i18n="city">Москва, Россия</span></li>
+          <li><span class="icn">☎</span><a href="tel:+79999691102">+7 (999) 969 1102</a></li>
+          <li><span class="icn">✉</span><a href="mailto:inwow@mail.ru">inwow@mail.ru</a></li>
+          <li><span class="icn">in</span><a href="https://www.linkedin.com/in/sergey-miryagin/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><span class="icn">➤</span><a href="https://t.me/sergeymiryagin" target="_blank" rel="noopener">@sergeymiryagin</a></li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 class="h" data-i18n="focus">Фокус</h2>
+        <ul class="focus-list">
+          <li>
+            <span class="bullet" style="background:var(--accent)"></span>
+            <span>
+              <div class="title" data-i18n="focus_1_t">Внутренние продукты</div>
+              <div class="desc" data-i18n="focus_1_d">Финтех / B2B / HRTech / Логистика</div>
+            </span>
+          </li>
+          <li>
+            <span class="bullet" style="background:var(--accent)"></span>
+            <span>
+              <div class="title" data-i18n="focus_2_t">Data-пайплайны</div>
+              <div class="desc" data-i18n="focus_2_d">ETL · NRT · Kafka · 30+ витрин</div>
+            </span>
+          </li>
+          <li>
+            <span class="bullet" style="background:var(--accent)"></span>
+            <span>
+              <div class="title" data-i18n="focus_3_t">Data-driven подход</div>
+              <div class="desc" data-i18n="focus_3_d">Метрики, A/B, discovery</div>
+            </span>
+          </li>
+          <li>
+            <span class="bullet" style="background:var(--accent)"></span>
+            <span>
+              <div class="title" data-i18n="focus_4_t">Лидерство команд</div>
+              <div class="desc" data-i18n="focus_4_d">До 100 человек</div>
+            </span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 class="h" data-i18n="skills">Уровень навыков</h2>
+        <div class="skill"><div class="skill-row"><span data-i18n="sk_1">Продакт-менеджмент</span><span class="pct">95%</span></div><div class="bar"><i style="width:95%;background:var(--accent)"></i></div></div>
+        <div class="skill"><div class="skill-row"><span data-i18n="sk_2">Автоматизация процессов</span><span class="pct">90%</span></div><div class="bar"><i style="width:90%;background:var(--accent)"></i></div></div>
+        <div class="skill"><div class="skill-row"><span data-i18n="sk_3">Аналитика и метрики</span><span class="pct">85%</span></div><div class="bar"><i style="width:85%;background:var(--blue)"></i></div></div>
+        <div class="skill"><div class="skill-row"><span data-i18n="sk_4">ETL / Data-пайплайны</span><span class="pct">75%</span></div><div class="bar"><i style="width:75%;background:var(--blue)"></i></div></div>
+        <div class="skill"><div class="skill-row"><span data-i18n="sk_5">Техническое погружение</span><span class="pct">65%</span></div><div class="bar"><i style="width:65%;background:var(--blue)"></i></div></div>
+        <div class="skill"><div class="skill-row"><span data-i18n="sk_6">LLM / AI (прикладной)</span><span class="pct">60%</span></div><div class="bar"><i style="width:60%;background:var(--green)"></i></div></div>
+      </section>
+
+      <section class="card">
+        <h2 class="h" data-i18n="tools">Инструменты</h2>
+        <div class="tools">
+          <span class="tag">Agile</span><span class="tag">Scrum</span><span class="tag">Kanban</span>
+          <span class="tag">Lean</span><span class="tag">ITSM</span><span class="tag">Figma</span>
+          <span class="tag">BI Tools</span><span class="tag">Confluence</span><span class="tag">Jira</span>
+          <span class="tag" data-i18n="tag_roadmap">Роадмап</span><span class="tag">Git</span>
+          <span class="tag" data-i18n="tag_api">API запросы</span>
+          <span class="tag t-data">Kafka</span><span class="tag t-data">ETL/NRT</span><span class="tag t-data">LLM/NLP</span>
+          <span class="tag t-ai" data-i18n="tag_ai">AI автоматизация</span>
+          <span class="tag t-ai">Prompt Eng.</span>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 class="h" data-i18n="languages">Языки</h2>
+        <div class="lang-block">
+          <div>
+            <div class="name" data-i18n="lang_ru">Русский</div>
+            <div class="lvl" data-i18n="lang_ru_lvl">Родной</div>
+            <div class="bar"><i style="width:100%;background:var(--accent)"></i></div>
+          </div>
+          <div>
+            <div class="name" data-i18n="lang_en">Английский</div>
+            <div class="lvl">B2</div>
+            <div class="bar"><i style="width:65%;background:var(--accent)"></i></div>
+          </div>
+        </div>
+      </section>
+    </aside>
+
+    <!-- ===== Main content ===== -->
+    <main>
+      <section class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:8px">
+          <h2 class="h" style="margin:0" data-i18n="experience">Опыт работы</h2>
+          <div class="legend">
+            <span><i style="background:var(--blue)"></i><span data-i18n="cat_internal">Внутренние</span></span>
+            <span><i style="background:#ffd166"></i><span data-i18n="cat_b2b">B2B</span></span>
+            <span><i style="background:var(--purple)"></i><span data-i18n="cat_hr">HRTech</span></span>
+            <span><i style="background:var(--green)"></i><span data-i18n="cat_support">Саппорт</span></span>
+            <span><i style="background:var(--red)"></i><span data-i18n="cat_fin">Финтех</span></span>
+          </div>
+        </div>
+
+        <!-- Alfa-Bank -->
+        <article class="job">
+          <div class="job-head">
+            <div class="company">Альфа-Банк</div>
+            <div class="loc" data-i18n="loc_moscow">Москва</div>
+          </div>
+          <div class="role-line">
+            <div class="role"><span class="cat-dot" style="background:var(--red)"></span><span data-i18n="alfa_role">Старший продакт-менеджер</span></div>
+            <div class="dates" data-i18n="alfa_dates">Июл 2025–наст. вр.</div>
+          </div>
+          <span class="pill" data-i18n="alfa_pill">Платформа мотивации партнёров (svoy.alfabank.ru)</span>
+          <p class="desc" data-i18n="alfa_desc">MLM-сеть партнёров банка для продажи банковских продуктов (MAU 33 700 / DAU 8 300). Владею движком расчёта мотивации: ETL + NRT-пайплайны (Kafka) по 30+ внутренним витринам данных, иерархия до 9 поколений. Ошибка расчёта необратима по политике бизнеса.</p>
+          <ul class="bullets">
+            <li data-i18n="alfa_b1">Полный цикл: discovery с продуктовыми командами, бизнес-руководителями и агентами → бизнес-логика → прод.</li>
+            <li data-i18n="alfa_b2">Запустил ДК 2.0 — полный пересмотр методологии мотивации по топовому продукту: 100+ задач, 60+ участников кросс-функциональной рабочей группы, запуск точно в срок, 0 инцидентов в IT.</li>
+            <li data-i18n="alfa_b3">5 759 заявок обработано на новой методологии с первого дня запуска.</li>
+            <li data-i18n="alfa_b4">NRT-пайплайн: срок отображения данных 6 → 1 день (ЖКУ) и 4 → 1 день (NTB + анкеты ДК).</li>
+            <li data-i18n="alfa_b5">Новая логика привязок агент-клиент → обращения в поддержку 30 → 1–2 на кейс.</li>
+            <li data-i18n="alfa_b6">Команда: 6 дата-инженеров, 3 системных аналитика, 2 тестировщика.</li>
+          </ul>
+        </article>
+
+        <!-- Leroy Merlin -->
+        <article class="job">
+          <div class="job-head">
+            <div class="company">Leroy Merlin (LemanaPro)</div>
+            <div class="loc" data-i18n="loc_moscow_2">Москва</div>
+          </div>
+          <div class="role-line">
+            <div class="role"><span class="cat-dot" style="background:#ffd166"></span><span data-i18n="leroy_role">Старший продакт-менеджер</span></div>
+            <div class="dates" data-i18n="leroy_dates">Авг 2024–Фев 2025 · 7 мес</div>
+          </div>
+          <span class="pill" data-i18n="leroy_pill">Портал поставщиков (B2B)</span>
+          <p class="desc" data-i18n="leroy_desc">B2B-портал поставщиков (1P/3P): управление ассортиментом, тендеры, аналитика.</p>
+          <ul class="bullets">
+            <li data-i18n="leroy_b1">Кастдев-интервью с поставщиками, менеджерами и бизнес-заказчиками.</li>
+            <li data-i18n="leroy_b2">Коммерческая отчётность → потенциал GMV +10%, экономия 20 FTE.</li>
+            <li data-i18n="leroy_b3">Редизайн регистрации → +25% новых поставщиков.</li>
+            <li data-i18n="leroy_b4">Мультиязычная поддержка → потенциал GMV €100M+.</li>
+          </ul>
+        </article>
+
+        <!-- Yandex Market - Procurement -->
+        <article class="job">
+          <div class="job-head">
+            <div class="company">Яндекс Маркет</div>
+            <div class="loc" data-i18n="loc_moscow_3">Москва</div>
+          </div>
+          <div class="role-line">
+            <div class="role"><span class="cat-dot" style="background:var(--blue)"></span><span data-i18n="yp_role">Старший продакт-менеджер</span></div>
+            <div class="dates" data-i18n="yp_dates">Май 2023–Мар 2024 · 11 мес</div>
+          </div>
+          <span class="pill blue" data-i18n="yp_pill">Платформа закупок (внутренняя)</span>
+          <p class="desc" data-i18n="yp_desc">Внутренняя платформа: прогноз продаж, размещение заказов, упущенные продажи. Управление беклогом ML-команды.</p>
+          <ul class="bullets">
+            <li data-i18n="yp_b1">Discovery: структурированные интервью с менеджерами склада, спецами репленишмента и бизнес-заказчиками.</li>
+            <li data-i18n="yp_b2">Автоматизация 89% заказов — без ручных корректировок.</li>
+            <li data-i18n="yp_b3">Доступность ТОП SKU ~90% (~30K SKU) в высокий сезон; упущ. продажи −1 млн руб/день.</li>
+            <li data-i18n="yp_b4">Рост GMV в 2,3 раза в высокий сезон.</li>
+            <li data-i18n="yp_b5">Таймлайн поставки → −50% нагрузки сотрудников.</li>
+            <li data-i18n="yp_b6">Наставничество junior PM; кросс-функциональные команды (dev + ML + аналитика).</li>
+          </ul>
+
+          <div class="subjob">
+            <div class="role-line">
+              <div class="role"><span class="cat-dot" style="background:var(--purple)"></span><span data-i18n="yh_role">Продакт-менеджер</span></div>
+              <div class="dates" data-i18n="yh_dates">Дек 2021–Май 2023 · 1 г 6 мес</div>
+            </div>
+            <span class="pill purple" data-i18n="yh_pill">HRTech платформа (внутренняя)</span>
+            <p class="desc" data-i18n="yh_desc">Полный цикл WFM для складов и СЦ: табелирование, расчёт зарплат, аутсорс, комплаенс.</p>
+            <ul class="bullets">
+              <li data-i18n="yh_b1">Картировал employee journey: интервью с сотрудниками склада, HR-менеджерами и руководителями аутсорс-компаний.</li>
+              <li data-i18n="yh_b2">Биометрия на всех складах → сокращение фрода ~2 млн руб/мес.</li>
+              <li data-i18n="yh_b3">Модуль коэффициента аутсорс-сервиса → экономия ~3 млн руб/мес.</li>
+              <li data-i18n="yh_b4">Личный кабинет аутсорс-компании → −35% нагрузки сотрудников.</li>
+              <li data-i18n="yh_b5">Онлайн-обучение → в 2 раза быстрее выход на смену.</li>
+              <li data-i18n="yh_b6">Споры по зарплате −89%; автоматизация медосмотров.</li>
+              <li data-i18n="yh_b7">Команда: 1 PM + QA; нагрузка dev снижена в 2 раза.</li>
+            </ul>
+          </div>
+
+          <div class="subjob">
+            <div class="role-line">
+              <div class="role"><span class="cat-dot" style="background:var(--green)"></span><span data-i18n="ya_role">Рук. службы тех. поддержки — Логистика и B2B</span></div>
+              <div class="dates" data-i18n="ya_dates">Апр 2018–Дек 2021 · 3 г 9 мес</div>
+            </div>
+            <span class="pill green" data-i18n="ya_pill">Логистическая платформа (внутренняя)</span>
+            <p class="desc" data-i18n="ya_desc">Масштабирование поддержки логистики (100K+ доставок/день). 6 команд, 100 чел., 3 линии (ПВЗ, СЦ, курьеры, B2B, WMS).</p>
+            <ul class="bullets">
+              <li data-i18n="ya_b1">Отмены заказов снижены в 12 раз через автоматизацию.</li>
+              <li data-i18n="ya_b2">ITSM-стандарты → 95% обращений в SLA.</li>
+              <li data-i18n="ya_b3">B2B: принял беклог 16K обращений, нанял ~50 L1 за 2 месяца, разобрали за 4.</li>
+              <li data-i18n="ya_b4">Унификация процессов, метрик и документации во всех 6 командах.</li>
+              <li data-i18n="ya_b5">Выстроил процессы найма, онбординга и кросс-командного взаимодействия с нуля.</li>
+            </ul>
+          </div>
+
+          <div class="subjob">
+            <div class="role-line">
+              <div class="role"><span class="cat-dot" style="background:var(--green)"></span><span data-i18n="yb_role">Менеджер поддержки — Беру / Bringly</span></div>
+              <div class="dates" data-i18n="yb_dates">Авг 2018–Апр 2019 · 8 мес</div>
+            </div>
+            <span class="pill green" data-i18n="yb_pill">Международный маркетплейс (M2M)</span>
+            <p class="desc" data-i18n="yb_desc">Поддержка с нуля для Беру и Bringly. Взаимодействие с партнёрами в Турции, Латвии, Китае (английский).</p>
+            <ul class="bullets">
+              <li data-i18n="yb_b1">Выстроил сервис, метрики и регламенты взаимодействия с нуля.</li>
+              <li data-i18n="yb_b2">Мониторинг инцидентов; взаимодействие с IT-отделами внешних лог. партнёров.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Yandex Infrastructure -->
+        <article class="job">
+          <div class="job-head">
+            <div class="company" data-i18n="yi_company">Яндекс Инфраструктура</div>
+            <div class="loc" data-i18n="loc_moscow_4">Москва</div>
+          </div>
+          <div class="role-line">
+            <div class="role"><span class="cat-dot" style="background:var(--green)"></span><span data-i18n="yi_role">Менеджер тех. поддержки — Яндекс.Коннект</span></div>
+            <div class="dates" data-i18n="yi_dates">Янв 2016–Апр 2018 · 2 г 3 мес</div>
+          </div>
+          <span class="pill green" data-i18n="yi_pill">Внутренние инструменты / Яндекс 360</span>
+          <p class="desc" data-i18n="yi_desc">Поддержка внутренних сервисов компании (впоследствии — Яндекс.Коннект / Яндекс 360 для внешних клиентов).</p>
+          <ul class="bullets">
+            <li data-i18n="yi_b1">Запустил L1; полностью перестроил процесс обработки обращений.</li>
+            <li data-i18n="yi_b2">Внедрил ITSM и SLA-метрики с нуля.</li>
+            <li data-i18n="yi_b3">Провёл масштабные обучающие мероприятия для сотрудников FoodFox и Uber.</li>
+            <li data-i18n="yi_b4">Участвовал во внешних встречах с крупными партнёрами как эксперт по продукту.</li>
+          </ul>
+
+          <div class="subjob">
+            <div class="role-line">
+              <div class="role"><span class="cat-dot" style="background:var(--green)"></span><span data-i18n="ym_role">Специалист тех. поддержки — Яндекс.Почта</span></div>
+              <div class="dates" data-i18n="ym_dates">Авг 2014–Янв 2016 · 1 г 5 мес</div>
+            </div>
+            <span class="pill green" data-i18n="ym_pill">Яндекс.Почта для доменов</span>
+            <p class="desc" data-i18n="ym_desc">Поддержка внешних пользователей: разработчики, сисадмины, IT-менеджеры.</p>
+            <ul class="bullets">
+              <li data-i18n="ym_b1">Переписал инструкции и шаблоны.</li>
+              <li data-i18n="ym_b2">Собирал аналитику использования продукта для продуктовых команд.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Wikimart -->
+        <article class="job">
+          <div class="job-head">
+            <div class="company">Wikimart</div>
+            <div class="loc" data-i18n="loc_moscow_5">Москва</div>
+          </div>
+          <div class="role-line">
+            <div class="role"><span class="cat-dot" style="background:var(--green)"></span><span data-i18n="wm_role">Специалист технической поддержки</span></div>
+            <div class="dates">2013–2015</div>
+          </div>
+          <span class="pill green" data-i18n="wm_pill">Внутренние инструменты / Маркетплейс</span>
+          <p class="desc" data-i18n="wm_desc">Внутренняя поддержка команд продаж, аккаунт-менеджмента и клиентского сервиса.</p>
+          <ul class="bullets">
+            <li data-i18n="wm_b1">SQL-запросы для межкомандной отчётности.</li>
+            <li data-i18n="wm_b2">Поддержка Atlassian (Jira, Confluence) и 1С.</li>
+            <li data-i18n="wm_b3">Диагностика проблем сервиса и передача баг-репортов командам разработки.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="card">
+        <h2 class="h" data-i18n="education">Образование</h2>
+        <div class="edu-item">
+          <div class="edu-line"><div class="edu-title" data-i18n="ed_1_t">Бакалавр — Автоматизация</div><div class="edu-year">2011–2015</div></div>
+          <div class="edu-desc" data-i18n="ed_1_d">НИТУ МиСиС, Москва</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-line"><div class="edu-title" data-i18n="ed_2_t">Школа продакт-менеджеров</div><div class="edu-year">2017–2018</div></div>
+          <div class="edu-desc" data-i18n="ed_2_d">Анализ рынка, гипотезы, MVP, питч</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-line"><div class="edu-title" data-i18n="ed_3_t">Курс DevOps инженера (GeekBrains)</div><div class="edu-year">2020–2021</div></div>
+          <div class="edu-desc" data-i18n="ed_3_d">Linux, сети, облака, безопасность</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-line"><div class="edu-title" data-i18n="ed_4_t">Колледж — Разработчик ПО</div><div class="edu-year">2007–2011</div></div>
+          <div class="edu-desc" data-i18n="ed_4_d">Красногорский гос. колледж</div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 class="h" data-i18n="achievements">Ключевые достижения</h2>
+        <div class="ach"><span class="v">€100M+</span><span class="t" data-i18n="ach_1">потенциал GMV (Leroy Merlin)</span></div>
+        <div class="ach green"><span class="v">2.3×</span><span class="t" data-i18n="ach_2">рост GMV высокий сезон (Яндекс)</span></div>
+        <div class="ach"><span class="v">0</span><span class="t" data-i18n="ach_3">IT-инцидентов — запуск ДК 2.0 (Альфа-Банк)</span></div>
+        <div class="ach blue"><span class="v">89%</span><span class="t" data-i18n="ach_4">автоматизация заказов (Яндекс)</span></div>
+        <div class="ach"><span class="v">12×</span><span class="t" data-i18n="ach_5">сокращение отмен заказов (Яндекс)</span></div>
+        <div class="ach"><span class="v">33 700</span><span class="t" data-i18n="ach_6">MAU — платформа партнёров (Альфа-Банк)</span></div>
+        <div class="ach green"><span class="v">95%</span><span class="t" data-i18n="ach_7">SLA compliance (ITSM лид)</span></div>
+        <div class="ach red"><span class="v">−50%</span><span class="t" data-i18n="ach_8">снижение затрат через автоматизацию</span></div>
+      </section>
+
+      <section class="card" id="contact">
+        <h2 class="h" data-i18n="contact_h">Связаться</h2>
+        <p class="desc" data-i18n="contact_lead">Напишите мне — отвечу в течение 1–2 рабочих дней.</p>
+        <form id="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+          <div class="form-row">
+            <div class="field">
+              <label for="name" data-i18n="f_name">Имя</label>
+              <input id="name" name="name" required type="text" autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="email" data-i18n="f_email">Email</label>
+              <input id="email" name="email" required type="email" autocomplete="email">
+            </div>
+          </div>
+          <div class="form-row single">
+            <div class="field">
+              <label for="message" data-i18n="f_msg">Сообщение</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+          </div>
+          <input type="text" name="_gotcha" style="display:none">
+          <button type="submit" class="btn" data-i18n="f_send">Отправить</button>
+          <div class="form-msg" id="form-msg"></div>
+          <div class="form-note" data-i18n="f_note">Форма работает через Formspree. До настройки — пишите напрямую на inwow@mail.ru.</div>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <span>© <span id="year"></span> Sergey Miryagin · </span>
+    <a href="mailto:inwow@mail.ru">inwow@mail.ru</a>
+  </footer>
+</div>
+
+<script>
+/* ===== i18n ===== */
+const I18N = {
+  ru: {
+    download_pdf:"Скачать PDF",
+    name:"Сергей Мирягин",
+    subtitle:"Старший продакт-менеджер · Финтех · E-commerce · HRTech · Внутренние платформы",
+    summary:"10+ лет создания внутренних продуктов в крупных компаниях — Альфа-Банк, Яндекс, Leroy Merlin. Эксперт в end-to-end discovery, ETL/NRT пайплайнах, системах мотивации и вознаграждений, автоматизации процессов (−30–50% затрат) и управлении кросс-функциональными командами.",
+    tl_1:"Саппорт",tl_2:"Мен. подд.",tl_3:"ITSM лид",tl_4:"PM HR",tl_5:"Ст.PM Закупки",tl_6:"Ст.PM B2B",tl_7:"Ст.PO Альфа",
+    kpi_1:"Платформа партнёров Альфа-Банк",
+    kpi_2_lbl:"рост выручки",kpi_2:"Высокий сезон, Яндекс",
+    kpi_3_lbl:"снижение затрат",kpi_3:"Автоматизация процессов",
+    contacts:"Контакты",city:"Москва, Россия",
+    focus:"Фокус",
+    focus_1_t:"Внутренние продукты",focus_1_d:"Финтех / B2B / HRTech / Логистика",
+    focus_2_t:"Data-пайплайны",focus_2_d:"ETL · NRT · Kafka · 30+ витрин",
+    focus_3_t:"Data-driven подход",focus_3_d:"Метрики, A/B, discovery",
+    focus_4_t:"Лидерство команд",focus_4_d:"До 100 человек",
+    skills:"Уровень навыков",
+    sk_1:"Продакт-менеджмент",sk_2:"Автоматизация процессов",sk_3:"Аналитика и метрики",
+    sk_4:"ETL / Data-пайплайны",sk_5:"Техническое погружение",sk_6:"LLM / AI (прикладной)",
+    tools:"Инструменты",tag_roadmap:"Роадмап",tag_api:"API запросы",tag_ai:"AI автоматизация",
+    languages:"Языки",lang_ru:"Русский",lang_ru_lvl:"Родной",lang_en:"Английский",
+    experience:"Опыт работы",
+    cat_internal:"Внутренние",cat_b2b:"B2B",cat_hr:"HRTech",cat_support:"Саппорт",cat_fin:"Финтех",
+    loc_moscow:"Москва",loc_moscow_2:"Москва",loc_moscow_3:"Москва",loc_moscow_4:"Москва",loc_moscow_5:"Москва",
+    /* Alfa */
+    alfa_role:"Старший продакт-менеджер",alfa_dates:"Июл 2025–наст. вр.",
+    alfa_pill:"Платформа мотивации партнёров (svoy.alfabank.ru)",
+    alfa_desc:"MLM-сеть партнёров банка для продажи банковских продуктов (MAU 33 700 / DAU 8 300). Владею движком расчёта мотивации: ETL + NRT-пайплайны (Kafka) по 30+ внутренним витринам данных, иерархия до 9 поколений. Ошибка расчёта необратима по политике бизнеса.",
+    alfa_b1:"Полный цикл: discovery с продуктовыми командами, бизнес-руководителями и агентами → бизнес-логика → прод.",
+    alfa_b2:"Запустил ДК 2.0 — полный пересмотр методологии мотивации по топовому продукту: 100+ задач, 60+ участников кросс-функциональной рабочей группы, запуск точно в срок, 0 инцидентов в IT.",
+    alfa_b3:"5 759 заявок обработано на новой методологии с первого дня запуска.",
+    alfa_b4:"NRT-пайплайн: срок отображения данных 6 → 1 день (ЖКУ) и 4 → 1 день (NTB + анкеты ДК).",
+    alfa_b5:"Новая логика привязок агент-клиент → обращения в поддержку 30 → 1–2 на кейс.",
+    alfa_b6:"Команда: 6 дата-инженеров, 3 системных аналитика, 2 тестировщика.",
+    /* Leroy */
+    leroy_role:"Старший продакт-менеджер",leroy_dates:"Авг 2024–Фев 2025 · 7 мес",
+    leroy_pill:"Портал поставщиков (B2B)",
+    leroy_desc:"B2B-портал поставщиков (1P/3P): управление ассортиментом, тендеры, аналитика.",
+    leroy_b1:"Кастдев-интервью с поставщиками, менеджерами и бизнес-заказчиками.",
+    leroy_b2:"Коммерческая отчётность → потенциал GMV +10%, экономия 20 FTE.",
+    leroy_b3:"Редизайн регистрации → +25% новых поставщиков.",
+    leroy_b4:"Мультиязычная поддержка → потенциал GMV €100M+.",
+    /* Yandex Procurement */
+    yp_role:"Старший продакт-менеджер",yp_dates:"Май 2023–Мар 2024 · 11 мес",
+    yp_pill:"Платформа закупок (внутренняя)",
+    yp_desc:"Внутренняя платформа: прогноз продаж, размещение заказов, упущенные продажи. Управление беклогом ML-команды.",
+    yp_b1:"Discovery: структурированные интервью с менеджерами склада, спецами репленишмента и бизнес-заказчиками.",
+    yp_b2:"Автоматизация 89% заказов — без ручных корректировок.",
+    yp_b3:"Доступность ТОП SKU ~90% (~30K SKU) в высокий сезон; упущ. продажи −1 млн руб/день.",
+    yp_b4:"Рост GMV в 2,3 раза в высокий сезон.",
+    yp_b5:"Таймлайн поставки → −50% нагрузки сотрудников.",
+    yp_b6:"Наставничество junior PM; кросс-функциональные команды (dev + ML + аналитика).",
+    /* Yandex HRTech */
+    yh_role:"Продакт-менеджер",yh_dates:"Дек 2021–Май 2023 · 1 г 6 мес",
+    yh_pill:"HRTech платформа (внутренняя)",
+    yh_desc:"Полный цикл WFM для складов и СЦ: табелирование, расчёт зарплат, аутсорс, комплаенс.",
+    yh_b1:"Картировал employee journey: интервью с сотрудниками склада, HR-менеджерами и руководителями аутсорс-компаний.",
+    yh_b2:"Биометрия на всех складах → сокращение фрода ~2 млн руб/мес.",
+    yh_b3:"Модуль коэффициента аутсорс-сервиса → экономия ~3 млн руб/мес.",
+    yh_b4:"Личный кабинет аутсорс-компании → −35% нагрузки сотрудников.",
+    yh_b5:"Онлайн-обучение → в 2 раза быстрее выход на смену.",
+    yh_b6:"Споры по зарплате −89%; автоматизация медосмотров.",
+    yh_b7:"Команда: 1 PM + QA; нагрузка dev снижена в 2 раза.",
+    /* Yandex Logistics ITSM */
+    ya_role:"Рук. службы тех. поддержки — Логистика и B2B",ya_dates:"Апр 2018–Дек 2021 · 3 г 9 мес",
+    ya_pill:"Логистическая платформа (внутренняя)",
+    ya_desc:"Масштабирование поддержки логистики (100K+ доставок/день). 6 команд, 100 чел., 3 линии (ПВЗ, СЦ, курьеры, B2B, WMS).",
+    ya_b1:"Отмены заказов снижены в 12 раз через автоматизацию.",
+    ya_b2:"ITSM-стандарты → 95% обращений в SLA.",
+    ya_b3:"B2B: принял беклог 16K обращений, нанял ~50 L1 за 2 месяца, разобрали за 4.",
+    ya_b4:"Унификация процессов, метрик и документации во всех 6 командах.",
+    ya_b5:"Выстроил процессы найма, онбординга и кросс-командного взаимодействия с нуля.",
+    /* Beru */
+    yb_role:"Менеджер поддержки — Беру / Bringly",yb_dates:"Авг 2018–Апр 2019 · 8 мес",
+    yb_pill:"Международный маркетплейс (M2M)",
+    yb_desc:"Поддержка с нуля для Беру и Bringly. Взаимодействие с партнёрами в Турции, Латвии, Китае (английский).",
+    yb_b1:"Выстроил сервис, метрики и регламенты взаимодействия с нуля.",
+    yb_b2:"Мониторинг инцидентов; взаимодействие с IT-отделами внешних лог. партнёров.",
+    /* Yandex Infrastructure */
+    yi_company:"Яндекс Инфраструктура",
+    yi_role:"Менеджер тех. поддержки — Яндекс.Коннект",yi_dates:"Янв 2016–Апр 2018 · 2 г 3 мес",
+    yi_pill:"Внутренние инструменты / Яндекс 360",
+    yi_desc:"Поддержка внутренних сервисов компании (впоследствии — Яндекс.Коннект / Яндекс 360 для внешних клиентов).",
+    yi_b1:"Запустил L1; полностью перестроил процесс обработки обращений.",
+    yi_b2:"Внедрил ITSM и SLA-метрики с нуля.",
+    yi_b3:"Провёл масштабные обучающие мероприятия для сотрудников FoodFox и Uber.",
+    yi_b4:"Участвовал во внешних встречах с крупными партнёрами как эксперт по продукту.",
+    /* Yandex Mail */
+    ym_role:"Специалист тех. поддержки — Яндекс.Почта",ym_dates:"Авг 2014–Янв 2016 · 1 г 5 мес",
+    ym_pill:"Яндекс.Почта для доменов",
+    ym_desc:"Поддержка внешних пользователей: разработчики, сисадмины, IT-менеджеры.",
+    ym_b1:"Переписал инструкции и шаблоны.",
+    ym_b2:"Собирал аналитику использования продукта для продуктовых команд.",
+    /* Wikimart */
+    wm_role:"Специалист технической поддержки",
+    wm_pill:"Внутренние инструменты / Маркетплейс",
+    wm_desc:"Внутренняя поддержка команд продаж, аккаунт-менеджмента и клиентского сервиса.",
+    wm_b1:"SQL-запросы для межкомандной отчётности.",
+    wm_b2:"Поддержка Atlassian (Jira, Confluence) и 1С.",
+    wm_b3:"Диагностика проблем сервиса и передача баг-репортов командам разработки.",
+    /* Education */
+    education:"Образование",
+    ed_1_t:"Бакалавр — Автоматизация",ed_1_d:"НИТУ МиСиС, Москва",
+    ed_2_t:"Школа продакт-менеджеров",ed_2_d:"Анализ рынка, гипотезы, MVP, питч",
+    ed_3_t:"Курс DevOps инженера (GeekBrains)",ed_3_d:"Linux, сети, облака, безопасность",
+    ed_4_t:"Колледж — Разработчик ПО",ed_4_d:"Красногорский гос. колледж",
+    /* Achievements */
+    achievements:"Ключевые достижения",
+    ach_1:"потенциал GMV (Leroy Merlin)",
+    ach_2:"рост GMV высокий сезон (Яндекс)",
+    ach_3:"IT-инцидентов — запуск ДК 2.0 (Альфа-Банк)",
+    ach_4:"автоматизация заказов (Яндекс)",
+    ach_5:"сокращение отмен заказов (Яндекс)",
+    ach_6:"MAU — платформа партнёров (Альфа-Банк)",
+    ach_7:"SLA compliance (ITSM лид)",
+    ach_8:"снижение затрат через автоматизацию",
+    /* Contact */
+    contact_h:"Связаться",
+    contact_lead:"Напишите мне — отвечу в течение 1–2 рабочих дней.",
+    f_name:"Имя",f_email:"Email",f_msg:"Сообщение",f_send:"Отправить",
+    f_note:"Форма работает через Formspree. До настройки — пишите напрямую на inwow@mail.ru.",
+    f_ok:"Спасибо! Сообщение отправлено.",
+    f_err:"Что-то пошло не так. Попробуйте написать на inwow@mail.ru."
+  },
+  en: {
+    download_pdf:"Download PDF",
+    name:"Sergey Miryagin",
+    subtitle:"Senior Product Manager · Fintech · E-commerce · HRTech · Internal Platforms",
+    summary:"10+ years building internal products at scale — Alfa-Bank, Yandex, Leroy Merlin. Expert in end-to-end discovery, ETL/NRT data pipelines, motivation & rewards systems, process automation (30–50% cost reduction) and cross-functional leadership.",
+    tl_1:"Mgr Support",tl_2:"Lead Tech",tl_3:"Lead ITSM",tl_4:"HRTech PM",tl_5:"Procure Sr PM",tl_6:"B2B Sr PM",tl_7:"Alfa Sr PO",
+    kpi_1:"Partner platform Alfa-Bank",
+    kpi_2_lbl:"Revenue growth",kpi_2:"Peak season Yandex",
+    kpi_3_lbl:"Cost reduction",kpi_3:"Via process automation",
+    contacts:"Contacts",city:"Moscow, Russia",
+    focus:"Focus Areas",
+    focus_1_t:"Internal Products",focus_1_d:"Fintech / B2B / HRTech / Logistics",
+    focus_2_t:"Data Pipelines",focus_2_d:"ETL · NRT · Kafka · 30+ marts",
+    focus_3_t:"Data-driven PM",focus_3_d:"Metrics, A/B, discovery",
+    focus_4_t:"Team Leadership",focus_4_d:"Up to 100 people",
+    skills:"Skill Levels",
+    sk_1:"Product Management",sk_2:"Process Automation",sk_3:"Analytics & Metrics",
+    sk_4:"ETL / Data Pipelines",sk_5:"Technical (API/SQL/Git)",sk_6:"LLM / AI (Applied)",
+    tools:"Tools & Stack",tag_roadmap:"Roadmapping",tag_api:"API Requests",tag_ai:"AI Automation",
+    languages:"Languages",lang_ru:"Russian",lang_ru_lvl:"Fluent",lang_en:"English",
+    experience:"Experience",
+    cat_internal:"Internal Tools",cat_b2b:"B2B",cat_hr:"HRTech",cat_support:"Support/Ops",cat_fin:"Fintech",
+    loc_moscow:"Moscow, Russia",loc_moscow_2:"Moscow, Russia",loc_moscow_3:"Moscow, Russia",loc_moscow_4:"Moscow, Russia",loc_moscow_5:"Moscow, Russia",
+    /* Alfa */
+    alfa_role:"Senior Product Manager",alfa_dates:"Jul 2025–Present",
+    alfa_pill:"Partner Motivation Platform (svoy.alfabank.ru)",
+    alfa_desc:"MLM partner network for bank product sales (33,700 MAU / 8,300 DAU). Owned motivation calculation engine: ETL + NRT pipelines (Kafka) across 30+ internal data marts, 9-level partner hierarchy. Zero-tolerance domain — calculations are irreversible by business design.",
+    alfa_b1:"Full-cycle ownership: discovery with product teams, business owners and agents → business logic → production release.",
+    alfa_b2:"Delivered Debit Card 2.0 — complete rebuild of motivation methodology for the top-selling product: 100+ tasks, 60+ people in cross-functional working group, launched on schedule with 0 IT incidents.",
+    alfa_b3:"5,759 applications processed on the new methodology from day one of launch.",
+    alfa_b4:"NRT pipeline: data display lag reduced 6 days → 1 day (utility payments) and 4 days → 1 day (NTB & Debit Card applications).",
+    alfa_b5:"Redesigned agent-client binding logic → support tickets per case reduced 30 → 1–2.",
+    alfa_b6:"Team: 6 data engineers, 3 system analysts, 2 QA engineers.",
+    /* Leroy */
+    leroy_role:"Senior Product Manager",leroy_dates:"Aug 2024–Feb 2025 · 7 mos",
+    leroy_pill:"Supplier Portal (B2B)",
+    leroy_desc:"B2B supplier portal (1P/3P): assortment management, tender participation, analytics.",
+    leroy_b1:"User interviews & journey sessions with suppliers, managers and business owners.",
+    leroy_b2:"Commercial reporting → 10% GMV growth potential, saved 20 FTEs.",
+    leroy_b3:"Redesigned registration flow → +25% new suppliers.",
+    leroy_b4:"Multilingual support → €100M+ GMV potential impact.",
+    /* Yandex Procurement */
+    yp_role:"Senior Product Manager",yp_dates:"May 2023–Mar 2024 · 11 mos",
+    yp_pill:"Procurement Platform (Internal)",
+    yp_desc:"Internal platform: inventory forecasting, order placement, lost sales analytics. Managed ML team backlog alongside core dev team.",
+    yp_b1:"Discovery: structured interviews with replenishment specialists, warehouse managers and business stakeholders.",
+    yp_b2:"Automated 89% of orders — zero manual adjustments.",
+    yp_b3:"90% SKU availability (~30K SKUs) in peak season; cut lost sales ~1M RUB/day.",
+    yp_b4:"GMV growth 2.3× in peak season via algorithm tuning.",
+    yp_b5:"Delivery timeline tracker → −50% manual workload.",
+    yp_b6:"Mentored 1 junior PM; led cross-functional squads (dev + ML + analytics).",
+    /* Yandex HRTech */
+    yh_role:"Product Manager",yh_dates:"Dec 2021–May 2023 · 1 yr 6 mos",
+    yh_pill:"HRTech Platform (Internal)",
+    yh_desc:"Full-cycle WFM for warehouses & sorting centres: time tracking, payroll, outsourcing, compliance.",
+    yh_b1:"Mapped the full employee journey via interviews with warehouse staff, HR managers and outsource leads.",
+    yh_b2:"Biometric access on all warehouses → fraud reduced ~2M RUB/month.",
+    yh_b3:"Outsource service coefficient module → ~3M RUB/month cost savings.",
+    yh_b4:"Outsource personal account → −35% staff workload.",
+    yh_b5:"Online training module → 2× faster shift onboarding.",
+    yh_b6:"Payroll disputes −89%; automated medical check-ins.",
+    yh_b7:"Led team: 1 PM + QA; cut dev load 2× via support process.",
+    /* Yandex Logistics ITSM */
+    ya_role:"ITSM Team Lead — Logistics & B2B",ya_dates:"Apr 2018–Dec 2021 · 3 yrs 9 mos",
+    ya_pill:"Logistics Platform (Internal)",
+    ya_desc:"Scaled support for Yandex Market logistics (100K+ daily deliveries). Led 6 teams / 100 people across 3 support lines (PickUp, Sorting Centres, Couriers, B2B, WMS).",
+    ya_b1:"Order cancellations reduced 12× via process automation.",
+    ya_b2:"Implemented ITSM standards → 95% SLA compliance across all teams.",
+    ya_b3:"B2B support: inherited 16K ticket backlog, hired ~50 L1 agents in 2 months, cleared backlog in 4 months.",
+    ya_b4:"Unified processes, metrics & documentation across all 6 teams.",
+    ya_b5:"Built hiring, onboarding and cross-team interaction processes from scratch.",
+    /* Beru */
+    yb_role:"Support Manager — Beru / Bringly",yb_dates:"Aug 2018–Apr 2019 · 8 mos",
+    yb_pill:"International Marketplace (M2M)",
+    yb_desc:"Built support from scratch for Beru (own marketplace) and Bringly (cross-border). Coordinated with logistics partners in Turkey, Latvia, China (English).",
+    yb_b1:"Set up service, metrics & interaction standards from zero.",
+    yb_b2:"Incident monitoring; interaction with IT departments of external logistics partners.",
+    /* Yandex Infrastructure */
+    yi_company:"Yandex Infrastructure",
+    yi_role:"Technical Support Manager — Yandex.Connect",yi_dates:"Jan 2016–Apr 2018 · 2 yrs 3 mos",
+    yi_pill:"Internal Tools / Yandex 360",
+    yi_desc:"Support for internal company services, later launched externally as Yandex.Connect / Yandex 360.",
+    yi_b1:"Launched L1 support line; fully rebuilt ticket processing workflow.",
+    yi_b2:"Implemented ITSM & SLA metrics from scratch.",
+    yi_b3:"Conducted large-scale onboarding training for FoodFox & Uber staff.",
+    yi_b4:"Participated in external sales meetings as product expert.",
+    /* Yandex Mail */
+    ym_role:"Support Manager — Yandex.Mail for Domains",ym_dates:"Aug 2014–Jan 2016 · 1 yr 5 mos",
+    ym_pill:"Yandex.Mail (pdd.yandex.ru)",
+    ym_desc:"External user support for developers, sysadmins and IT managers.",
+    ym_b1:"Rewrote support instructions & templates.",
+    ym_b2:"Collected product usage analytics and feedback for dev teams.",
+    /* Wikimart */
+    wm_role:"Technical Support Specialist",
+    wm_pill:"Internal Tools / Marketplace",
+    wm_desc:"Internal support for sales, account management and customer service teams.",
+    wm_b1:"SQL queries for cross-team reporting.",
+    wm_b2:"Supported Atlassian suite (Jira, Confluence); 1C support.",
+    wm_b3:"Diagnosed service issues and routed bug reports to dev teams.",
+    /* Education */
+    education:"Education",
+    ed_1_t:"Bachelor's — Automated Control Systems",ed_1_d:"NUST MISIS, Moscow",
+    ed_2_t:"Yandex PM School",ed_2_d:"Market analysis, hypotheses, MVP, investor pitch",
+    ed_3_t:"DevOps Course (GeekBrains)",ed_3_d:"Linux, networking, cloud, security basics",
+    ed_4_t:"College — Software Developer",ed_4_d:"Krasnogorsk State College (Delphi, C++)",
+    /* Achievements */
+    achievements:"Key Achievements",
+    ach_1:"GMV potential (Leroy Merlin)",
+    ach_2:"GMV growth peak season (Yandex)",
+    ach_3:"IT incidents — DK 2.0 launch (Alfa-Bank)",
+    ach_4:"Order automation (Yandex)",
+    ach_5:"Order cancellation reduction (Yandex)",
+    ach_6:"MAU — partner platform (Alfa-Bank)",
+    ach_7:"SLA compliance (ITSM Lead)",
+    ach_8:"Cost reduction via automation",
+    /* Contact */
+    contact_h:"Contact Me",
+    contact_lead:"Drop me a line — I'll reply within 1–2 business days.",
+    f_name:"Name",f_email:"Email",f_msg:"Message",f_send:"Send",
+    f_note:"Form is powered by Formspree. Until configured — email me at inwow@mail.ru.",
+    f_ok:"Thanks! Your message has been sent.",
+    f_err:"Something went wrong. Try emailing inwow@mail.ru directly."
+  }
+};
+
+/* ===== State & helpers ===== */
+const PDF_BY_LANG = { ru:"cv_ru.pdf", en:"cv_en.pdf" };
+const PAGE_TITLE = {
+  ru:"Сергей Мирягин — Старший продакт-менеджер",
+  en:"Sergey Miryagin — Senior Product Manager"
+};
+
+function setLang(lang){
+  if(!I18N[lang]) lang = "ru";
+  document.documentElement.lang = lang;
+  document.title = PAGE_TITLE[lang];
+  const dict = I18N[lang];
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const key = el.getAttribute("data-i18n");
+    if(dict[key] !== undefined){ el.textContent = dict[key]; }
+  });
+  document.querySelectorAll(".lang button").forEach(b=>{
+    b.classList.toggle("active", b.dataset.lang === lang);
+  });
+  // Update PDF link
+  const dl = document.getElementById("download-btn");
+  if(dl){ dl.setAttribute("href", PDF_BY_LANG[lang]); dl.setAttribute("download", PDF_BY_LANG[lang]); }
+  // Persist
+  try{ localStorage.setItem("lang", lang); }catch(e){}
+  // Update query without reload
+  try{
+    const url = new URL(window.location.href);
+    url.searchParams.set("lang", lang);
+    window.history.replaceState({}, "", url.toString());
+  }catch(e){}
+}
+
+function initLang(){
+  let lang;
+  try{ lang = new URL(window.location.href).searchParams.get("lang"); }catch(e){}
+  if(!lang){
+    try{ lang = localStorage.getItem("lang"); }catch(e){}
+  }
+  if(!lang){
+    lang = (navigator.language||"ru").toLowerCase().startsWith("en") ? "en" : "ru";
+  }
+  setLang(lang);
+}
+
+/* ===== Event wiring ===== */
+document.querySelectorAll(".lang button").forEach(b=>{
+  b.addEventListener("click", ()=> setLang(b.dataset.lang));
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+/* ===== Contact form (Formspree) ===== */
+const form = document.getElementById("contact-form");
+const msg = document.getElementById("form-msg");
+form.addEventListener("submit", async (e)=>{
+  e.preventDefault();
+  const lang = document.documentElement.lang || "ru";
+  const dict = I18N[lang];
+  const action = form.getAttribute("action");
+  msg.style.display = "none"; msg.classList.remove("err");
+
+  // If Formspree isn't configured yet, fall back to mailto
+  if(!action || action.includes("YOUR_FORMSPREE_ID")){
+    const data = new FormData(form);
+    const subject = encodeURIComponent("Site contact: " + (data.get("name")||""));
+    const body = encodeURIComponent(
+      (data.get("name")||"") + " <" + (data.get("email")||"") + ">\n\n" + (data.get("message")||"")
+    );
+    window.location.href = "mailto:inwow@mail.ru?subject="+subject+"&body="+body;
+    return;
+  }
+
+  try{
+    const res = await fetch(action, {
+      method: "POST",
+      headers: { "Accept": "application/json" },
+      body: new FormData(form),
+    });
+    if(res.ok){
+      form.reset();
+      msg.textContent = dict.f_ok;
+      msg.style.display = "block";
+    }else{
+      msg.classList.add("err");
+      msg.textContent = dict.f_err;
+      msg.style.display = "block";
+    }
+  }catch(err){
+    msg.classList.add("err");
+    msg.textContent = dict.f_err;
+    msg.style.display = "block";
+  }
+});
+
+initLang();
+</script>
+</body>
+</html>
